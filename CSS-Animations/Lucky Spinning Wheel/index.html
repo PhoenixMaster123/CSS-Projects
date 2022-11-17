@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lucky Spinning Wheel Game</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class ="spinBtn">Spin</div>
+            <div class="wheel">
+                <div class="number" style ="--i:1;--clr:#db7093;"><span>100</span></div>
+                <div class="number" style ="--i:2;--clr:#0de9de;"><span>1</span></div>
+                <div class="number" style ="--i:3;--clr:#ec0653;"><span>50</span></div>
+                <div class="number" style ="--i:4;--clr:#e6ac0f;"><span>0</span></div>
+                <div class="number" style ="--i:5;--clr:#c01818;"><span>1000</span></div>
+                <div class="number" style ="--i:6;--clr:#0e24ec;"><span>10</span></div>
+                <div class="number" style ="--i:7;--clr:#0ace24;"><span>5</span></div>
+                <div class="number" style ="--i:8;--clr:#a5c6e6;"><span>20</span></div>
+            </div>
+        </div>
+        <script>
+            let wheel = document.querySelector(".wheel");
+            let spinBtn = document.querySelector(".spinBtn");
+            let value = Math.ceil(Math.random() * 3600)
+            spinBtn.onclick = function()
+            {
+                wheel.style.transform = "rotate(" + value + "deg)";
+                value += Math.ceil(Math.random() * 3600)
+            }
+        </script>
+    </body>
+</html>
